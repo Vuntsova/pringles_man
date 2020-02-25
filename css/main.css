@@ -1,0 +1,78 @@
+@import"./eyes.css";
+
+*{
+    box-sizing: border-box;
+}
+/* Keyframes for Pringles Man noustache */
+@keyframes moveLeftStache{
+    0%{
+        transform: rotate(-60deg);
+    }
+
+    50%{
+        transform: rotate(-40deg);
+    }
+
+    100%{
+        transform: rotate(-60deg);
+    }
+}
+
+@keyframes moveRightStache{
+    0%{
+        transform: rotate(60deg);
+    }
+
+    50%{
+        transform: rotate(40deg);
+    }
+
+    100%{
+        transform: rotate(60deg);
+    }
+}
+
+.moustache{
+    position: absolute;
+    top:50px;
+    left:50px;
+    height: 180px;
+    width: 180px;
+    color: black;
+    border-radius: 100%;
+    box-shadow: 
+        150px 240px 0 0 black,
+        320px 240px 0 0 black;
+}
+
+.moustache::before{
+    content: "";
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    top: 90px;
+    left: 60px;
+    border-bottom: 150px solid black;
+    border-radius: 0 0 0 100%;
+    transform: rotate(-60deg);
+    transform-origin: right 250px ;
+    animation-name: moveLeftStache;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.moustache::after{
+    content: "";
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    top: 90px;
+    left: 410px;
+    border-bottom: 150px solid black;
+    border-radius: 0 0 100% 0;
+    transform: rotate(60deg);
+    transform-origin: left 250px ;
+    animation-name: moveRightStache;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
